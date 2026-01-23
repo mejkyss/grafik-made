@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion"
 import { Award, Printer, Users, Zap, Shield, Cpu, ArrowRight } from "lucide-react"
@@ -77,20 +78,34 @@ export function AboutContent() {
       <FadeIn delay={0.3}>
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-foreground mb-6">Moderní nástroje</h2>
-          <div className="p-6 bg-card rounded-2xl border border-border">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Cpu className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  AI moduly v praxi
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Využívám nejnovější AI nástroje pro optimalizaci workflow a zvýšení efektivity 
-                  při realizaci designových zakázek. Nejde o nahrazení odbornosti, ale o její 
-                  rozšíření tam, kde to dává smysl.
-                </p>
+          <div className="space-y-8">
+            <div className="rounded-3xl overflow-hidden border border-border shadow-lg bg-card">
+              <Image
+                src="/images/foto-20voxell.png"
+                alt="Workflow: Od produktové fotografie přes zpracování po finální prezentaci"
+                width={1600}
+                height={500}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-center text-muted-foreground">
+              Produktová fotografie → Zpracování → Finální prezentace
+            </p>
+            <div className="p-6 bg-card rounded-2xl border border-border">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Cpu className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    AI moduly v praxi
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Využívám nejnovější AI nástroje pro optimalizaci workflow a zvýšení efektivity 
+                    při realizaci designových zakázek. Nejde o nahrazení odbornosti, ale o její 
+                    rozšíření tam, kde to dává smysl.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
