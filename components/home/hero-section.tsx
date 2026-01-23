@@ -51,7 +51,7 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" className="rounded-2xl">
+              <Button variant="default" asChild size="lg" className="rounded-2xl">
                 <Link href="/moje-prace">Moje práce</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-2xl bg-transparent">
