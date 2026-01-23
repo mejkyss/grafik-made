@@ -1,0 +1,57 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { projects } from "@/lib/data"
+import { Button } from "@/components/ui/button"
+import { ProjectDetail } from "@/components/portfolio/project-detail"
+import { ArrowLeft } from "lucide-react"
+
+interface PageProps {
+  params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+
+  if (!project) {
+    return {
+      title: "Projekt nenalezen",
+    }
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+  }
+}
+
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+
+  if (!project) {
+    notFound()
+  }
+
+  return (
+    <div className="py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <Button asChild variant="ghost" className="mb-8 -ml-2">
+          <Link href="/moje-prace">
+            <ArrowLeft className="mr-2 w-4 h-4" />
+            Zpět na přehled
+          </Link>
+        </Button>
+
+        <ProjectDetail project={project} />
+      </div>
+    </div>
+  )
+}
