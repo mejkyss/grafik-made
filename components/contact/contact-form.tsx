@@ -1,9 +1,7 @@
 "use client"
 
 import React from "react"
-
-import { useState, useEffect } from "react"
-import { useSearchParams } from "next/navigation"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/motion"
 import { Send, CheckCircle2 } from "lucide-react"
@@ -19,7 +17,6 @@ const projectTypes = [
 ]
 
 export function ContactForm() {
-  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,16 +28,6 @@ export function ContactForm() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  useEffect(() => {
-    const predmet = searchParams.get("predmet")
-    if (predmet) {
-      setFormData((prev) => ({
-        ...prev,
-        message: predmet,
-      }))
-    }
-  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

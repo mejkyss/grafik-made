@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { ContactForm } from "@/components/contact/contact-form"
 import { Mail, Phone, MapPin } from "lucide-react"
 
@@ -23,7 +24,9 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <ContactForm />
+            <Suspense fallback={<div className="p-8 bg-card rounded-2xl border border-border h-96 animate-pulse" />}>
+              <ContactForm />
+            </Suspense>
           </div>
 
           <div className="space-y-6">
@@ -72,7 +75,7 @@ export default function ContactPage() {
             <div className="p-6 bg-card rounded-2xl border border-border">
               <h3 className="font-semibold text-foreground mb-3">Forma spolupráce</h3>
               <p className="text-sm text-muted-foreground">
-                Externí spolupráce: paušál nebo projekt.<br />
+                Externí spolupráce: paušál nebo projekt.
                 Jasné zadání, jasný výstup.
               </p>
             </div>
