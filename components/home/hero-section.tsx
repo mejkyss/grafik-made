@@ -21,23 +21,51 @@ const transformationSteps = [
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left side - Content */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="relative">
+          {/* Logo - Top Right */}
+          <FadeIn delay={0.1}>
+            <div className="absolute top-0 right-0 hidden lg:block">
+              <Image
+                src="/images/exter-d-logo.png"
+                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                width={480}
+                height={256}
+                className="w-auto h-auto max-w-md"
+                priority
+              />
+            </div>
+          </FadeIn>
+
+          {/* Content - Left Side */}
           <FadeIn>
-            <div className="max-w-xl">
+            <div className="max-w-2xl">
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Od návrhu až po funkční výstup – bez chyb, bez zdržení
               </h1>
 
               {/* Description */}
-              <p className="mt-6 text-lg sm:text-xl text-muted-foreground font-medium leading-relaxed">
-                Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
-              </p>
-              <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-                Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
-              </p>
+              <div className="mt-6 space-y-2 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
+                </p>
+                <p>
+                  Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
+                </p>
+              </div>
+
+              {/* Mobile Logo */}
+              <div className="mt-8 lg:hidden">
+                <Image
+                  src="/images/exter-d-logo.png"
+                  alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                  width={360}
+                  height={192}
+                  className="w-full max-w-sm h-auto"
+                  priority
+                />
+              </div>
 
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -50,7 +78,7 @@ export function HeroSection() {
               </div>
 
               {/* Trust Chips */}
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {trustChips.map((chip) => (
                   <span
                     key={chip}
@@ -60,20 +88,6 @@ export function HeroSection() {
                   </span>
                 ))}
               </div>
-            </div>
-          </FadeIn>
-
-          {/* Right side - Logo */}
-          <FadeIn delay={0.2}>
-            <div className="relative">
-              <Image
-                src="/images/exter-d-logo.png"
-                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                width={600}
-                height={320}
-                className="w-full h-auto"
-                priority
-              />
             </div>
           </FadeIn>
         </div>
