@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { FadeIn } from "@/components/motion"
 import { CheckCircle2, Users, Workflow } from "lucide-react"
@@ -21,6 +22,7 @@ const tabs = [
       "optimální využívání nejnovějších AI modulů při realizaci designu zakázky",
       "finální realizaci zakázek",
     ],
+    image: true,
   },
   {
     id: "proc-se-mnou",
@@ -33,6 +35,7 @@ const tabs = [
       "pracuji externě, bez zbytečné administrativy",
       "firmy mě využívají dlouhodobě jako spolehlivou oporu",
     ],
+    image: false,
   },
   {
     id: "jak-spoluprace",
@@ -42,6 +45,7 @@ const tabs = [
       "externí spolupráce (paušál / projekt)",
       "jasné zadání → jasný výstup",
     ],
+    image: false,
   },
 ]
 
@@ -89,19 +93,50 @@ export function TabsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
             >
-              {activeContent?.items.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
-                >
-                  <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
-                </motion.div>
-              ))}
+              {activeContent?.image ? (
+                <div className="space-y-8">
+                  <div className="rounded-3xl overflow-hidden border border-border shadow-lg bg-card">
+                    <Image
+                      src="/images/foto-20voxell.png"
+                      alt="Workflow: Od produktové fotografie přes zpracování po finální prezentaci"
+                      width={1600}
+                      height={500}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-sm text-center text-muted-foreground mb-8">
+                    Produktová fotografie → Zpracování → Finální prezentace
+                  </p>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {activeContent?.items.map((item, index) => (
+                      <motion.div
+                        key={item}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        className="p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
+                      >
+                        <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  {activeContent?.items.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
+                    >
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

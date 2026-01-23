@@ -21,21 +21,36 @@ const transformationSteps = [
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        {/* Content */}
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
         <FadeIn>
-          <div className="max-w-3xl mb-8">
+          <div className="text-center">
+            {/* Logo */}
+            <div className="flex justify-center mb-8 sm:mb-12">
+              <Image
+                src="/images/exter-d-logo.png"
+                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                width={380}
+                height={200}
+                className="w-full max-w-xs h-auto"
+                priority
+              />
+            </div>
+
+            {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight text-balance">
               Od návrhu až po funkční výstup – bez chyb, bez zdržení
             </h1>
-            <p className="mt-5 text-lg sm:text-xl text-muted-foreground font-medium leading-relaxed">
+
+            {/* Description */}
+            <p className="mt-6 text-lg sm:text-xl text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
               Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
             </p>
-            <p className="mt-3 text-base text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild size="lg" className="rounded-2xl">
                 <Link href="/moje-prace">Moje práce</Link>
               </Button>
@@ -44,7 +59,8 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            {/* Trust Chips */}
+            <div className="mt-8 flex flex-wrap gap-2 justify-center">
               {trustChips.map((chip) => (
                 <span
                   key={chip}
@@ -54,25 +70,6 @@ export function HeroSection() {
                 </span>
               ))}
             </div>
-          </div>
-        </FadeIn>
-
-        {/* Image */}
-        <FadeIn delay={0.2}>
-          <div className="relative mx-auto max-w-4xl">
-            <div className="rounded-3xl overflow-hidden border border-border shadow-lg bg-card">
-              <Image
-                src="/images/foto-20voxell.png"
-                alt="Workflow: Od produktové fotografie přes zpracování po finální prezentaci"
-                width={1600}
-                height={400}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
-            <p className="mt-6 text-sm text-center text-muted-foreground">
-              Produktová fotografie → Zpracování → Finální prezentace
-            </p>
           </div>
         </FadeIn>
       </div>
