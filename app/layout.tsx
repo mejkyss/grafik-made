@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import "./globals.css"
 
 const inter = Inter({
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <ScrollToTop />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
