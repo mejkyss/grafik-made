@@ -123,17 +123,22 @@ export function TabsSection() {
                 </div>
               ) : (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  {activeContent?.items.map((item, index) => (
-                    <motion.div
-                      key={item}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
-                    >
-                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
-                    </motion.div>
-                  ))}
+                  {activeContent?.items.map((item, index) => {
+                    const isHighlighted = index % 2 === 0
+                    return (
+                      <motion.div
+                        key={item}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        className={`p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300 ${
+                          isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+                        }`}
+                      >
+                        <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
+                      </motion.div>
+                    )
+                  })}
                 </div>
               )}
             </motion.div>

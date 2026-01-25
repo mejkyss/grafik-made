@@ -2,6 +2,8 @@ import { HeroSection } from "@/components/home/hero-section"
 import { TabsSection } from "@/components/home/tabs-section"
 import { TargetAudienceSection } from "@/components/home/target-audience-section"
 import { CollaborationSection } from "@/components/home/collaboration-section"
+import { ModernToolsSection } from "@/components/home/modern-tools-section"
+import { CollaborationStepsSection } from "@/components/home/collaboration-steps-section"
 import { PortfolioTeaserSection } from "@/components/home/portfolio-teaser-section"
 import { ContactCtaSection } from "@/components/home/contact-cta-section"
 
@@ -11,6 +13,8 @@ export default function HomePage() {
       <HeroSection />
       <TabsSection />
       <TargetAudienceSection />
+      <ModernToolsSection />
+      <CollaborationStepsSection />
       <CollaborationSection />
       <PortfolioTeaserSection />
       <ContactCtaSection />

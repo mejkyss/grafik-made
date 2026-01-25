@@ -12,10 +12,14 @@ export function ProductsGrid() {
   return (
     <FadeInStagger className="grid sm:grid-cols-2 gap-6">
       {products.map((product, index) => {
-        const Icon = productIcons[index] || FileSearch
+        const Icon = productIcons[index % productIcons.length]
+        const isHighlighted = index % 2 === 0
+        
         return (
           <FadeInStaggerItem key={product.id}>
-            <div className="h-full p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 flex flex-col">
+            <div className={`h-full p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 flex flex-col ${
+              isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+            }`}>
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-6 h-6 text-primary" />
@@ -25,12 +29,33 @@ export function ProductsGrid() {
                 </span>
               </div>
 
+              {product.badges && product.badges.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {product.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               <h3 className="text-xl font-semibold text-foreground mb-2">
                 {product.title}
               </h3>
               <p className="text-muted-foreground mb-6">
                 {product.description}
               </p>
+
+              {product.note && (
+                <div className="mb-6 p-4 bg-muted/50 rounded-xl">
+                  <p className="text-sm text-foreground whitespace-pre-line">
+                    {product.note}
+                  </p>
+                </div>
+              )}
 
               <div className="mb-6 flex-grow">
                 <h4 className="text-sm font-medium text-foreground mb-3">

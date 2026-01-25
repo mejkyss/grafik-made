@@ -3,6 +3,7 @@ import Link from "next/link"
 import { services } from "@/lib/data"
 import { Button } from "@/components/ui/button"
 import { ServicesGrid } from "@/components/services/services-grid"
+import { CollaborationStepsSection } from "@/components/home/collaboration-steps-section"
 import { ArrowRight, Briefcase, Calendar } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -25,7 +26,11 @@ export default function ServicesPage() {
         </div>
 
         <ServicesGrid />
+      </div>
 
+      <CollaborationStepsSection />
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <section className="mt-16 sm:mt-20">
           <div className="bg-card rounded-3xl border border-border p-8 sm:p-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
