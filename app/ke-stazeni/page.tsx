@@ -110,11 +110,15 @@ export default function DownloadsPage() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.items.map((item) => (
-                    <div
-                      key={item.title}
-                      className="p-6 bg-card rounded-2xl border border-border hover:border-primary/20 transition-all duration-300"
-                    >
+                  {category.items.map((item, index) => {
+                    const isHighlighted = index === 0
+                    return (
+                      <div
+                        key={item.title}
+                        className={`p-6 bg-card rounded-2xl border border-border hover:border-primary/20 transition-all duration-300 ${
+                          isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+                        }`}
+                      >
                       <div className="flex items-start justify-between gap-4 mb-3">
                         <Download className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
                         {item.comingSoon && (
@@ -134,7 +138,8 @@ export default function DownloadsPage() {
                         {item.fileSize}
                       </p>
                     </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </section>
             )

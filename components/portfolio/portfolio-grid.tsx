@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { realizaceGallery } from "@/lib/data"
@@ -47,6 +47,23 @@ export function PortfolioGrid() {
     setSelectedImage(item)
     setSelectedIndex(index)
   }
+
+  useEffect(() => {
+    if (!selectedImage) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null)
+      } else if (e.key === "ArrowLeft") {
+        handlePrevious()
+      } else if (e.key === "ArrowRight") {
+        handleNext()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [selectedImage, selectedIndex, filteredGallery])
 
   return (
     <div>
@@ -168,13 +185,14 @@ export function PortfolioGrid() {
                 <span className="sr-only">Zavřít</span>
               </button>
 
-              <div className="relative flex-1 bg-black rounded-2xl overflow-hidden">
+              <div className="relative w-full h-[70vh] bg-black rounded-2xl overflow-hidden">
                 <Image
                   src={selectedImage.src}
                   alt={selectedImage.title}
                   fill
                   className="object-contain"
                   quality={100}
+                  sizes="(max-width: 1024px) 100vw, 1024px"
                 />
               </div>
 

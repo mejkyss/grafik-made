@@ -73,11 +73,15 @@ export default function ArticlesPage() {
         </div>
 
         <div className="grid gap-6">
-          {articles.map((article) => (
-            <article
-              key={article.slug}
-              className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
-            >
+          {articles.map((article, index) => {
+            const isHighlighted = index % 3 === 0
+            return (
+              <article
+                key={article.slug}
+                className={`p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300 ${
+                  isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+                }`}
+              >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
                 <div className="flex-grow">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -116,7 +120,8 @@ export default function ArticlesPage() {
                 <ArrowRight className="w-4 h-4" />
               </div>
             </article>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-12 p-6 bg-muted/50 rounded-2xl">

@@ -13,9 +13,13 @@ export function ProductsGrid() {
     <FadeInStagger className="grid sm:grid-cols-2 gap-6">
       {products.map((product, index) => {
         const Icon = productIcons[index % productIcons.length]
+        const isHighlighted = product.badges?.includes("Nejčastější")
+        
         return (
           <FadeInStaggerItem key={product.id}>
-            <div className="h-full p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 flex flex-col">
+            <div className={`h-full p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 flex flex-col ${
+              isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+            }`}>
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-6 h-6 text-primary" />

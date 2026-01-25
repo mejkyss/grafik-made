@@ -15,10 +15,14 @@ export function CollaborationStepsSection() {
         </FadeIn>
 
         <FadeInStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-          {collaborationSteps.map((step, index) => (
-            <FadeInStaggerItem key={step.number}>
-              <div className="relative h-full">
-                <div className="p-6 bg-card rounded-2xl border border-border h-full flex flex-col items-center text-center">
+          {collaborationSteps.map((step, index) => {
+            const isHighlighted = index === 0 || index === 3
+            return (
+              <FadeInStaggerItem key={step.number}>
+                <div className="relative h-full">
+                  <div className={`p-6 bg-card rounded-2xl border border-border h-full flex flex-col items-center text-center ${
+                    isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+                  }`}>
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <span className="text-2xl font-bold text-primary">
                       {step.number}
@@ -33,9 +37,10 @@ export function CollaborationStepsSection() {
                     <ArrowRight className="w-5 h-5 text-muted-foreground" />
                   </div>
                 )}
-              </div>
-            </FadeInStaggerItem>
-          ))}
+                </div>
+              </FadeInStaggerItem>
+            )
+          })}
         </FadeInStagger>
       </div>
     </section>
