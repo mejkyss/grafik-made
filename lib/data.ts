@@ -473,8 +473,8 @@ export const services = [
       "rychlost, responzivitu, moderní vzhled",
       "možnost doplnit články a sekci ke stažení"
     ],
-    price: "Cena již od 4 000 Kč",
-    note: "Přesná cena se odvíjí od rozsahu a podkladů."
+    price: "8 000 Kč",
+    note: "Úplná webová stránka s veškerými SEO optimalizacemi, funkcionalitou, indexací a optimalizací."
   }
 ]
 
