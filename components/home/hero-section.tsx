@@ -9,7 +9,6 @@ import { Camera, Package, ShoppingBag, ArrowRight } from "lucide-react"
 const trustChips = [
   "25+ let praxe",
   "tisk + výroba + montáž",
-  "externě bez administrativy",
 ]
 
 const transformationSteps = [
@@ -73,7 +72,7 @@ export function HeroSection() {
                   <Link href="/moje-prace">Moje práce</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-2xl bg-transparent">
-                  <Link href="/produkty">Produkty k objednání</Link>
+                  <Link href="/produkty">Rychlé tiskové produkty</Link>
                 </Button>
               </div>
 

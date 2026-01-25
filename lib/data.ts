@@ -266,6 +266,7 @@ export interface Product {
   features: string[]
   turnaround: string
   subject: string
+  badges?: string[]
 }
 
 export const products: Product[] = [
@@ -280,7 +281,8 @@ export const products: Product[] = [
       "Písemný report s nálezy"
     ],
     turnaround: "1-2 pracovní dny",
-    subject: "Poptávka: Kontrola tiskových dat"
+    subject: "Poptávka: Kontrola tiskových dat",
+    badges: ["Rychle", "Nejčastější"]
   },
   {
     id: "priprava-pdf-pro-tisk",
@@ -293,7 +295,8 @@ export const products: Product[] = [
       "Připraveno pro konkrétní tiskovou technologii"
     ],
     turnaround: "1-3 pracovní dny",
-    subject: "Poptávka: Příprava PDF pro tisk"
+    subject: "Poptávka: Příprava PDF pro tisk",
+    badges: ["Tisková data", "Nejčastější"]
   },
   {
     id: "personifikovane-tiskoviny",
@@ -306,7 +309,8 @@ export const products: Product[] = [
       "Kontrola a validace výstupů"
     ],
     turnaround: "3-5 pracovních dnů",
-    subject: "Poptávka: Personifikované tiskoviny"
+    subject: "Poptávka: Personifikované tiskoviny",
+    badges: ["Personifikace"]
   },
   {
     id: "produktova-prezentace",
@@ -319,7 +323,79 @@ export const products: Product[] = [
       "Export pro web i tisk"
     ],
     turnaround: "3-5 pracovních dnů",
-    subject: "Poptávka: Produktová prezentace"
+    subject: "Poptávka: Produktová prezentace",
+    badges: ["Rychle"]
+  },
+  {
+    id: "stitky",
+    title: "Štítky",
+    price: "od 1 500 Kč",
+    description: "Štítky na produkty, obaly nebo značení. Připravím tisková data podle technologie a materiálu.",
+    features: [
+      "Příprava dat podle technologie",
+      "Kontrola výseků a rozměrů",
+      "Správné barevné profily"
+    ],
+    turnaround: "1-2 pracovní dny",
+    subject: "Poptávka: Štítky",
+    badges: ["Rychle", "Tisková data"]
+  },
+  {
+    id: "vizitky",
+    title: "Vizitky",
+    price: "od 900 Kč",
+    description: "Čistý návrh nebo úprava podkladů, kontrola pro tisk a bezchybný výstup.",
+    features: [
+      "Návrh nebo úprava designu",
+      "Kontrola tiskových dat",
+      "Export pro konkrétní tiskárnu"
+    ],
+    turnaround: "1-2 pracovní dny",
+    subject: "Poptávka: Vizitky",
+    badges: ["Rychle", "Nejčastější"]
+  },
+  {
+    id: "dl",
+    title: "DL",
+    price: "od 1 200 Kč",
+    description: "DL letáky, poukazy nebo informační kartičky. Správná sazba, export a kontrola detailů.",
+    features: [
+      "Sazba podle podkladů",
+      "Kontrola rozměrů DL formátu",
+      "Tisková data připravená pro výrobu"
+    ],
+    turnaround: "1-3 pracovní dny",
+    subject: "Poptávka: DL",
+    badges: ["Tisková data"]
+  },
+  {
+    id: "vstupenky",
+    title: "Vstupenky",
+    price: "od 2 500 Kč",
+    description: "Vstupenky včetně číslování nebo personifikace. Databáze, kontrola výstupu, připraveno pro tisk.",
+    features: [
+      "Personifikace z databáze",
+      "Číslování podle požadavků",
+      "Kontrolní sestava a tiskové PDF"
+    ],
+    turnaround: "2-4 pracovní dny",
+    subject: "Poptávka: Vstupenky",
+    badges: ["Personifikace", "Tisková data"]
+  },
+  {
+    id: "kalendare",
+    title: "Kalendáře",
+    price: "od 3 500 Kč",
+    description: "Kompletní příprava kalendářů všech typů pro tisk.",
+    features: [
+      "Všechny formáty kalendářů",
+      "Kontrola svátků a dat",
+      "Tisková data s kontrolou vazby"
+    ],
+    turnaround: "3-5 pracovních dnů",
+    subject: "Poptávka: Kalendáře",
+    badges: ["Tisková data"],
+    note: "Kalendária pro aktuální a následující rok!\nTýdenní, měsíční, tříměsíční, roční, dvouleté, plánovací a diář."
   }
 ]
 
@@ -385,5 +461,163 @@ export const services = [
       "Retuš a postprodukce",
       "Export pro web, katalog, e-shop"
     ]
+  },
+  {
+    title: "Tvorba webu na míru",
+    description: "Vytvořím vám moderní web, který vypadá skvěle a zároveň funguje. Firemní web, portfolio, landing page nebo jednoduchý katalog služeb.",
+    deliverables: [
+      "web na míru podle vašeho oboru a cíle",
+      "portfolio nebo ukázky realizací",
+      "základní SEO nastavení",
+      "indexaci a napojení na Google (Search Console)",
+      "rychlost, responzivitu, moderní vzhled",
+      "možnost doplnit články a sekci ke stažení"
+    ],
+    price: "Cena již od 4 000 Kč",
+    note: "Přesná cena se odvíjí od rozsahu a podkladů."
+  }
+]
+
+export const collaborationSteps = [
+  {
+    number: "1",
+    title: "zadání od klienta"
+  },
+  {
+    number: "2",
+    title: "návrh řešení"
+  },
+  {
+    number: "3",
+    title: "potvrzení rozsahu a ceny"
+  },
+  {
+    number: "4",
+    title: "realizace"
+  }
+]
+
+export const realizaceGallery = [
+  {
+    id: "etikety-vzory",
+    title: "Etikety - vzory",
+    src: "/Realizace_2000-2026/ETIKETY_VZORY.jpg",
+    category: "Etikety"
+  },
+  {
+    id: "kalendaria",
+    title: "Kalendária",
+    src: "/Realizace_2000-2026/KALENDARIA.jpg",
+    category: "Kalendáře"
+  },
+  {
+    id: "komiks",
+    title: "Komiks",
+    src: "/Realizace_2000-2026/KOMIKS.jpg",
+    category: "Ilustrace"
+  },
+  {
+    id: "nabidkove-listy",
+    title: "Nabídkové listy",
+    src: "/Realizace_2000-2026/NABIDKOVE_LISTY.jpg",
+    category: "Tiskoviny"
+  },
+  {
+    id: "etikety-1",
+    title: "Etikety - kolekce 1",
+    src: "/Realizace_2000-2026/ETIKETY_1.jpg",
+    category: "Etikety"
+  },
+  {
+    id: "etikety-2",
+    title: "Etikety - kolekce 2",
+    src: "/Realizace_2000-2026/ETIKETY_2.jpg",
+    category: "Etikety"
+  },
+  {
+    id: "ilustrace-2",
+    title: "Produktové ilustrace",
+    src: "/Realizace_2000-2026/ILUSTRACE_2.jpg",
+    category: "Ilustrace"
+  },
+  {
+    id: "fotoobrazy",
+    title: "Fotoobrazy",
+    src: "/Realizace_2000-2026/FOTOOBRAZY.jpg",
+    category: "Foto"
+  },
+  {
+    id: "logotypy",
+    title: "Logotypy",
+    src: "/Realizace_2000-2026/LOGOTYPY.jpg",
+    category: "Grafika"
+  },
+  {
+    id: "pred-ai",
+    title: "Před AI",
+    src: "/Realizace_2000-2026/PRED_AI.jpg",
+    category: "Ilustrace"
+  },
+  {
+    id: "ilustrace-1",
+    title: "Technické ilustrace",
+    src: "/Realizace_2000-2026/ILUSTRACE_1.jpg",
+    category: "Ilustrace"
+  },
+  {
+    id: "poukazy",
+    title: "Poukazy",
+    src: "/Realizace_2000-2026/POUKAZY.jpg",
+    category: "Tiskoviny"
+  },
+  {
+    id: "tabule-projektu",
+    title: "Tabule projektů",
+    src: "/Realizace_2000-2026/TABULE_PROJEKTU.jpg",
+    category: "Grafika"
+  },
+  {
+    id: "tiskoviny-ostatni",
+    title: "Tiskoviny ostatní",
+    src: "/Realizace_2000-2026/TISKOVINY_OSTATNI.jpg",
+    category: "Tiskoviny"
+  }
+]
+
+export const quickPrintCatalog = [
+  {
+    id: "stitky-1",
+    title: "Vzory štítků - květinové",
+    src: "/Rychle-tiskoviny/VZORY_STITKY_1.jpg",
+    type: "image",
+    pdf: "/Rychle-tiskoviny/VZORY_STITKY.pdf"
+  },
+  {
+    id: "stitky-2",
+    title: "Vzory štítků - abstraktní",
+    src: "/Rychle-tiskoviny/VZORY_STITKY_2.jpg",
+    type: "image",
+    pdf: "/Rychle-tiskoviny/VZORY_STITKY.pdf"
+  },
+  {
+    id: "poukazy",
+    title: "Náhledy poukazů",
+    src: "/Rychle-tiskoviny/NAHLED_POUKAZY.jpg",
+    type: "image",
+    pdf: "/Rychle-tiskoviny/VZORY_POUKAZY.pdf"
+  },
+  {
+    id: "vizitky",
+    title: "Náhledy vizitek",
+    src: "/Rychle-tiskoviny/NAHLED_VIZITKY.jpg",
+    type: "image",
+    pdf: "/Rychle-tiskoviny/VZORY_VIZITKY.pdf"
+  },
+  {
+    id: "vstupenky",
+    title: "Náhledy vstupenek",
+    src: "/Rychle-tiskoviny/NAHLED_VSTUPENKY.jpg",
+    type: "image",
+    pdf: "/Rychle-tiskoviny/VZORY_VSTUPENKY.pdf"
   }
 ]

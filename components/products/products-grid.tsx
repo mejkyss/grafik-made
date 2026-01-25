@@ -12,7 +12,7 @@ export function ProductsGrid() {
   return (
     <FadeInStagger className="grid sm:grid-cols-2 gap-6">
       {products.map((product, index) => {
-        const Icon = productIcons[index] || FileSearch
+        const Icon = productIcons[index % productIcons.length]
         return (
           <FadeInStaggerItem key={product.id}>
             <div className="h-full p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 flex flex-col">
@@ -25,12 +25,33 @@ export function ProductsGrid() {
                 </span>
               </div>
 
+              {product.badges && product.badges.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {product.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               <h3 className="text-xl font-semibold text-foreground mb-2">
                 {product.title}
               </h3>
               <p className="text-muted-foreground mb-6">
                 {product.description}
               </p>
+
+              {product.note && (
+                <div className="mb-6 p-4 bg-muted/50 rounded-xl">
+                  <p className="text-sm text-foreground whitespace-pre-line">
+                    {product.note}
+                  </p>
+                </div>
+              )}
 
               <div className="mb-6 flex-grow">
                 <h4 className="text-sm font-medium text-foreground mb-3">

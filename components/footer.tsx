@@ -3,7 +3,9 @@ import Link from "next/link"
 const quickLinks = [
   { href: "/moje-prace", label: "Moje práce" },
   { href: "/sluzby", label: "Služby" },
-  { href: "/produkty", label: "Produkty" },
+  { href: "/produkty", label: "Rychlé tiskové produkty" },
+  { href: "/ke-stazeni", label: "Ke stažení" },
+  { href: "/clanky", label: "Články" },
   { href: "/o-mne", label: "O mně" },
   { href: "/kontakt", label: "Kontakt" },
 ]
