@@ -47,7 +47,7 @@ export function QuickPrintCatalog() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {quickPrintCatalog.map((item, index) => {
-            const isHighlighted = index === 0 || index === 2
+            const isHighlighted = index % 2 === 0
             return (
               <div
                 key={item.id}

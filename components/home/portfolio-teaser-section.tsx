@@ -34,7 +34,7 @@ export function PortfolioTeaserSection() {
 
         <FadeInStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {featuredWorks.map((work, index) => {
-            const isHighlighted = index === 0 || index === 5
+            const isHighlighted = index % 2 === 0
             return (
               <FadeInStaggerItem key={work.id}>
                 <Link

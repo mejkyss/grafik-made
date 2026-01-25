@@ -16,7 +16,7 @@ export function CollaborationStepsSection() {
 
         <FadeInStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
           {collaborationSteps.map((step, index) => {
-            const isHighlighted = index === 0 || index === 3
+            const isHighlighted = index % 2 === 0
             return (
               <FadeInStaggerItem key={step.number}>
                 <div className="relative h-full">

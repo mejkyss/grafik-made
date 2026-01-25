@@ -111,7 +111,7 @@ export default function DownloadsPage() {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, index) => {
-                    const isHighlighted = index === 0
+                    const isHighlighted = index % 2 === 0
                     return (
                       <div
                         key={item.title}

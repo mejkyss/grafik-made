@@ -74,7 +74,7 @@ export default function ArticlesPage() {
 
         <div className="grid gap-6">
           {articles.map((article, index) => {
-            const isHighlighted = index % 3 === 0
+            const isHighlighted = index % 2 === 0
             return (
               <article
                 key={article.slug}

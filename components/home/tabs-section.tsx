@@ -124,7 +124,7 @@ export function TabsSection() {
               ) : (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {activeContent?.items.map((item, index) => {
-                    const isHighlighted = index % 5 === 0 && activeTab === "co-resim"
+                    const isHighlighted = index % 2 === 0
                     return (
                       <motion.div
                         key={item}

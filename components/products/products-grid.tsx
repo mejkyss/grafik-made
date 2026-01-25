@@ -13,7 +13,7 @@ export function ProductsGrid() {
     <FadeInStagger className="grid sm:grid-cols-2 gap-6">
       {products.map((product, index) => {
         const Icon = productIcons[index % productIcons.length]
-        const isHighlighted = product.badges?.includes("Nejčastější")
+        const isHighlighted = index % 2 === 0
         
         return (
           <FadeInStaggerItem key={product.id}>

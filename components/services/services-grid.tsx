@@ -22,11 +22,12 @@ export function ServicesGrid() {
       {services.map((service, index) => {
         const Icon = serviceIcons[index] || FileCheck
         const isWebService = service.title === "Tvorba webu na míru"
+        const isHighlighted = index % 2 === 0
         
         return (
           <FadeInStaggerItem key={service.title}>
             <div className={`p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300 ${
-              isWebService ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
+              isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
             }`}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex-shrink-0">
