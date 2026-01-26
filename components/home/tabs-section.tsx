@@ -98,7 +98,7 @@ export function TabsSection() {
                 <div className="space-y-8">
                   <div className="rounded-3xl overflow-hidden border border-border shadow-lg bg-card">
                     <Image
-                      src="/images/foto-20voxell.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/foto-20voxell.png`}
                       alt="Workflow: Od produktové fotografie přes zpracování po finální prezentaci"
                       width={1600}
                       height={500}

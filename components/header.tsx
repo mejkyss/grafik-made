@@ -31,7 +31,7 @@ export function Header() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/images/exter-d-logotyp.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/exter-d-logotyp.png`}
               alt="EXTER/D - externí technický grafik pro tisk a výrobu"
               width={160}
               height={60}
