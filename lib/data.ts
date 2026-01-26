@@ -258,6 +258,28 @@ export const projects: Project[] = [
   }
 ]
 
+// Prefix any leading-slash asset paths with the runtime base path
+const __BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+function prefixPaths(obj: any) {
+  if (Array.isArray(obj)) {
+    return obj.map(prefixPaths)
+  }
+  if (obj && typeof obj === 'object') {
+    for (const k of Object.keys(obj)) {
+      const v = obj[k]
+      if (typeof v === 'string' && v.startsWith('/')) {
+        obj[k] = __BASE_PATH + v
+      } else if (typeof v === 'object' && v !== null) {
+        prefixPaths(v)
+      }
+    }
+  }
+  return obj
+}
+
+prefixPaths(projects)
+
 export interface Product {
   id: string
   title: string
