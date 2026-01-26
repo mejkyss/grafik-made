@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "technicka-priprava-grafickych-dat-pro-vystavni-realizace",
+    title: "Technická příprava grafických dat pro výstavní realizace",
+    date: "2025-01-26",
+    readTime: "8 min",
+    excerpt: "Jak převést grafické podklady ze různých zdrojů do plně vyrobitelného stavu. Praktický průvodce procesem od návrhu k bezchybné výrobě.",
+    category: "Výstavnictví"
+  },
+  {
     slug: "5-nejcastejsich-chyb-v-tiskovych-datech",
     title: "5 nejčastějších chyb v tiskových datech",
     date: "2024-03-15",
@@ -115,10 +123,13 @@ export default function ArticlesPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-                <span>Připravujeme</span>
+              <Link
+                href={`/clanky/${article.slug}`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              >
+                <span>Číst článek</span>
                 <ArrowRight className="w-4 h-4" />
-              </div>
+              </Link>
             </article>
             )
           })}
