@@ -267,6 +267,7 @@ export interface Product {
   turnaround: string
   subject: string
   badges?: string[]
+  note?: string
 }
 
 export const products: Product[] = [
