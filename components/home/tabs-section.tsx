@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { FadeIn } from "@/components/motion"
 import { CheckCircle2, Users, Workflow } from "lucide-react"
