@@ -261,7 +261,7 @@ export const projects: Project[] = [
 // Prefix any leading-slash asset paths with the runtime base path
 const __BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
-function prefixPaths(obj: any) {
+function prefixPaths(obj: any): any {
   if (Array.isArray(obj)) {
     return obj.map(prefixPaths)
   }
