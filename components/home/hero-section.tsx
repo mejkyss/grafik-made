@@ -40,7 +40,7 @@ export function HeroSection() {
           <FadeIn>
             <div className="max-w-2xl">
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-6xl">
                 Od návrhu až po funkční výstup – bez chyb, bez zdržení
               </h1>
 
