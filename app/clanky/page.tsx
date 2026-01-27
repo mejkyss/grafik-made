@@ -1,13 +1,9 @@
+"use client"
+
 import type { Metadata } from "next"
-import Link from "next/link"
-import { Calendar, Clock, ArrowRight, CheckCircle2 } from "lucide-react"
+import { ExpandableArticle } from "@/components/article/expandable-article"
 
-export const metadata: Metadata = {
-  title: "Články",
-  description:
-    "Krátké praktické články k tisku, výrobě, přípravě dat a častým chybám.",
-}
-
+// Note: Metadata is not available in client components, but this page is now client-side for interactivity
 const articles = [
   {
     slug: "technicka-priprava-grafickych-dat",
@@ -16,7 +12,32 @@ const articles = [
     readTime: "7 min",
     excerpt: "Jak převádím grafické podklady do plně vyrobitelného stavu. Od návrhu k bezchybným výrobním podkladům, které fungují ve 100% kvalitě.",
     category: "Technická grafika",
-    published: true
+    published: true,
+    content: `
+      <h3>Od návrhu k vyrobitelnému řešení</h3>
+      <p>Mou specializací je převod takových grafických podkladů do plně vyrobitelného stavu ve 100% kvalitě. Pracuji s daty, která často slouží spíše jako „surovina", a upravuji je tak, aby byla technicky správná, přehledná a bezpečná pro další kroky výroby.</p>
+      
+      <p>Cílem není pouze „opravit grafiku", ale vytvořit funkční výrobní podklady, se kterými může bez problémů pracovat tiskárna, výrobce 3D komponent i realizační tým na místě.</p>
+
+      <h3>Přehledné grafické souhrny jako základ realizace</h3>
+      <p>Součástí mé práce je tvorba grafických souhrnů, které slouží jako:</p>
+      <ul>
+        <li>podklady pro tisk jednotlivých částí stánku,</li>
+        <li>specifikace materiálů a počtů kusů,</li>
+        <li>přehled pro výrobu atypických nebo 3D prvků,</li>
+        <li>orientační mapa pro umístění grafiky při stavbě stánku.</li>
+      </ul>
+      
+      <p>Jednotlivé výstupy jsou jasně označené, okótované a doplněné o popis materiálů i specifické požadavky klienta. Díky tomu mají všichni zúčastnění k dispozici stejná, srozumitelná a kontrolovatelná data.</p>
+
+      <h3>Kontrola jako prevence chyb</h3>
+      <p>Zásadní součástí procesu je následná kontrola souhrnů ze strany objednatele a realizátora. Tento krok výrazně snižuje riziko chyb při výrobě, minimalizuje dodatečné náklady a zajišťuje, že výsledná realizace odpovídá původnímu záměru.</p>
+
+      <h3>Zkušenosti z praxe</h3>
+      <p>Dlouhodobě spolupracuji s firmami, které zajišťují kompletní design a realizaci výstavních stánků. Díky tomu znám typické problémy, které v tomto oboru vznikají, i místa, kde se chyby nejčastěji přenášejí dál do výroby.</p>
+
+      <p>Mým cílem je být technickým partnerem, který propojuje grafický návrh s realitou výroby a pomáhá udržet celý proces přehledný, efektivní a bez zbytečných komplikací.</p>
+    `
   },
   {
     slug: "5-nejcastejsich-chyb-v-tiskovych-datech",
@@ -24,7 +45,9 @@ const articles = [
     date: "2024-03-15",
     readTime: "5 min",
     excerpt: "Jaké chyby se v tiskových podkladech opakují nejčastěji a jak se jim vyhnout. Praktický přehled s konkrétními příklady.",
-    category: "Tisková data"
+    category: "Tisková data",
+    published: false,
+    content: ""
   },
   {
     slug: "jak-poznam-ze-foto-ma-dostatecne-rozliseni",
@@ -32,7 +55,9 @@ const articles = [
     date: "2024-03-10",
     readTime: "4 min",
     excerpt: "Jednoduchý návod, jak ověřit, zda je fotografie vhodná pro tisk v konkrétním formátu. Bez složitých vzorečků.",
-    category: "Příprava dat"
+    category: "Příprava dat",
+    published: false,
+    content: ""
   },
   {
     slug: "barevnost-cmyk-vs-rgb",
@@ -40,7 +65,9 @@ const articles = [
     date: "2024-03-05",
     readTime: "6 min",
     excerpt: "Proč jsou barvy v tisku jiné než na obrazovce a jak správně připravit data pro tisk i web.",
-    category: "Barevnost"
+    category: "Barevnost",
+    published: false,
+    content: ""
   },
   {
     slug: "spadavky-proc-jsou-dulezite",
@@ -48,7 +75,9 @@ const articles = [
     date: "2024-02-28",
     readTime: "4 min",
     excerpt: "Co jsou spadávky, k čemu slouží a jaké problémy můžou nastat, když chybí. S praktickými příklady.",
-    category: "Tisková data"
+    category: "Tisková data",
+    published: false,
+    content: ""
   },
   {
     slug: "personifikace-jak-na-to",
@@ -56,7 +85,9 @@ const articles = [
     date: "2024-02-20",
     readTime: "7 min",
     excerpt: "Praktický návod na přípravu dat pro variabilní tisk. Co kontrolovat, jak strukturovat databázi a čemu se vyhnout.",
-    category: "Personifikace"
+    category: "Personifikace",
+    published: false,
+    content: ""
   },
   {
     slug: "prectiste-si-pred-odesl-anim-do-tisku",
@@ -64,7 +95,9 @@ const articles = [
     date: "2024-02-15",
     readTime: "5 min",
     excerpt: "Kompletní kontrolní seznam všeho, co je potřeba zkontrolovat před odesláním dat do tiskárny.",
-    category: "Kontrola"
+    category: "Kontrola",
+    published: false,
+    content: ""
   }
 ]
 
@@ -82,65 +115,18 @@ export default function ArticlesPage() {
         </div>
 
         <div className="grid gap-6">
-          {articles.map((article, index) => {
-            const isHighlighted = index % 2 === 0
-            return (
-              <article
-                key={article.slug}
-                className={`p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300 ${
-                  isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
-                }`}
-              >
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                      {article.category}
-                    </span>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="w-4 h-4" />
-                        <time dateTime={article.date}>
-                          {new Date(article.date).toLocaleDateString('cs-CZ', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                          })}
-                        </time>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4" />
-                        <span>{article.readTime}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">
-                    {article.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {article.excerpt}
-                  </p>
-                </div>
-              </div>
-
-              {article.published ? (
-                <Link href={`/clanky/${article.slug}`}>
-                  <div className="inline-flex items-center gap-2 text-sm font-medium text-green-600 hover:underline hover:text-green-700 transition-colors">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span>Přečíst článek</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </Link>
-              ) : (
-                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                  <span>Připravujeme</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              )}
-            </article>
-            )
-          })}
+          {articles.filter(article => article.published).map((article) => (
+            <ExpandableArticle
+              key={article.slug}
+              slug={article.slug}
+              title={article.title}
+              date={article.date}
+              readTime={article.readTime}
+              excerpt={article.excerpt}
+              category={article.category}
+              content={article.content}
+            />
+          ))}
         </div>
 
         <div className="mt-12 p-6 bg-muted/50 rounded-2xl">
