@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { Calendar, Clock, ArrowRight, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Články",
@@ -15,7 +15,8 @@ const articles = [
     date: "2026-01-27",
     readTime: "7 min",
     excerpt: "Jak převádím grafické podklady do plně vyrobitelného stavu. Od návrhu k bezchybným výrobním podkladům, které fungují ve 100% kvalitě.",
-    category: "Technická grafika"
+    category: "Technická grafika",
+    published: true
   },
   {
     slug: "5-nejcastejsich-chyb-v-tiskovych-datech",
@@ -123,10 +124,20 @@ export default function ArticlesPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-                <span>Připravujeme</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
+              {article.published ? (
+                <Link href={`/clanky/${article.slug}`}>
+                  <div className="inline-flex items-center gap-2 text-sm font-medium text-green-600 hover:underline hover:text-green-700 transition-colors">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Přečíst článek</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
+              ) : (
+                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                  <span>Připravujeme</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              )}
             </article>
             )
           })}
