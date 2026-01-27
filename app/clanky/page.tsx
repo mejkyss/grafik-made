@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "technicka-priprava-grafickych-dat",
+    title: "Technická příprava grafických dat pro výstavní realizace",
+    date: "2026-01-27",
+    readTime: "7 min",
+    excerpt: "Jak převádím grafické podklady do plně vyrobitelného stavu. Od návrhu k bezchybným výrobním podkladům, které fungují ve 100% kvalitě.",
+    category: "Technická grafika"
+  },
+  {
     slug: "5-nejcastejsich-chyb-v-tiskovych-datech",
     title: "5 nejčastějších chyb v tiskových datech",
     date: "2024-03-15",
