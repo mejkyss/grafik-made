@@ -26,7 +26,7 @@ export function HeroSection() {
           <FadeIn delay={0.1}>
             <div className="absolute top-0 right-0 hidden lg:block">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/exter-d-logo.png`}
+                src="/images/exter-d-logo.png"
                 alt="EXTER/D - externí technický grafik pro tisk a výrobu"
                 width={480}
                 height={256}
@@ -57,7 +57,7 @@ export function HeroSection() {
               {/* Mobile Logo */}
               <div className="mt-8 lg:hidden">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/exter-d-logo.png`}
+                  src="/images/exter-d-logo.png"
                   alt="EXTER/D - externí technický grafik pro tisk a výrobu"
                   width={360}
                   height={192}

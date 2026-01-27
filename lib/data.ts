@@ -258,33 +258,6 @@ export const projects: Project[] = [
   }
 ]
 
-// Prefix any leading-slash asset paths with the runtime base path
-const __BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
-
-function prefixPaths(obj: any): any {
-  if (Array.isArray(obj)) {
-    return obj.map(prefixPaths)
-  }
-  if (obj && typeof obj === 'object') {
-    for (const k of Object.keys(obj)) {
-      const v = obj[k]
-      if (typeof v === 'string' && v.startsWith('/')) {
-        obj[k] = __BASE_PATH + v
-      } else if (typeof v === 'object' && v !== null) {
-        prefixPaths(v)
-      }
-    }
-  }
-  return obj
-}
-
-prefixPaths(projects)
-
-// Also prefix paths in gallery arrays (applied after they are defined below)
-function applyPrefixToGalleries(): void {
-  prefixPaths(realizaceGallery)
-  prefixPaths(quickPrintCatalog)
-}
 
 export interface Product {
   id: string
@@ -650,6 +623,3 @@ export const quickPrintCatalog = [
     pdf: "/Rychle-tiskoviny/VZORY_VSTUPENKY.pdf"
   }
 ]
-
-// Apply base path prefix to gallery arrays
-applyPrefixToGalleries()

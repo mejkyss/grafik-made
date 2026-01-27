@@ -65,7 +65,7 @@ export function ModernToolsSection() {
               {/* Image */}
               <div className="relative aspect-square hidden lg:block rounded-2xl overflow-hidden">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/modern-tools.jpg`}
+                  src="/modern-tools.jpg"
                   alt="Moderní nástroje a technologie"
                   fill
                   className="object-cover"
