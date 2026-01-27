@@ -62,15 +62,17 @@ export function ModernToolsSection() {
                 </Button>
               </div>
 
-              {/* Image */}
-              <div className="relative aspect-square hidden lg:block rounded-2xl overflow-hidden">
-                <Image
-                  src="/modern-tools.jpg"
-                  alt="Moderní nástroje a technologie"
-                  fill
-                  className="object-cover"
-                  quality={100}
-                />
+              {/* Video */}
+              <div className="relative hidden lg:block rounded-2xl overflow-hidden bg-black">
+                <div className="aspect-[9/16] w-full max-w-md mx-auto">
+                  <iframe
+                    src="https://www.youtube.com/embed/SaX2LJizNfs"
+                    title="Modern tools demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
               </div>
             </div>
           </div>
