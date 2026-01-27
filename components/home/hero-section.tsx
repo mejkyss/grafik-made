@@ -21,24 +21,10 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="relative">
-          {/* Logo - Top Right */}
-          <FadeIn delay={0.1}>
-            <div className="absolute top-0 right-0 hidden lg:block">
-              <Image
-                src="/images/exter-d-logo.png"
-                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                width={480}
-                height={256}
-                className="w-auto h-auto max-w-md"
-                priority
-              />
-            </div>
-          </FadeIn>
-
+        <div className="relative flex items-start gap-8">
           {/* Content - Left Side */}
           <FadeIn>
-            <div className="max-w-2xl">
+            <div className="max-w-2xl flex-1">
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl">
                 Od návrhu až po funkční výstup – bez chyb, bez zdržení
@@ -87,6 +73,21 @@ export function HeroSection() {
                   </span>
                 ))}
               </div>
+            </div>
+          </FadeIn>
+
+          {/* Logo - Right Side */}
+          <FadeIn delay={0.1}>
+            <div className="hidden lg:flex items-start flex-shrink-0">
+              <Image
+                src="/images/exter-d-logo.png"
+                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                width={480}
+                height={256}
+                className="w-auto"
+                style={{ height: 'auto' }}
+                priority
+              />
             </div>
           </FadeIn>
         </div>
