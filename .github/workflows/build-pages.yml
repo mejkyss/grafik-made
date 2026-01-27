@@ -29,13 +29,13 @@ jobs:
       - name: Build static site
         run: pnpm build
 
-  - name: Prepare docs folder
-  run: |
-    rm -rf docs
-    mkdir docs
-    cp -r out/* docs/
-    touch docs/.nojekyll
-    echo "grafik.made.cz" > docs/CNAME
+      - name: Prepare docs folder
+        run: |
+          rm -rf docs
+          mkdir docs
+          cp -r out/* docs/
+          touch docs/.nojekyll
+          echo "grafik.made.cz" > docs/CNAME
 
       - name: Commit docs
         run: |
