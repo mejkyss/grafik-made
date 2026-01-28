@@ -80,7 +80,7 @@ export function HeroSection() {
           <FadeIn delay={0.1}>
             <div className="hidden lg:flex items-start flex-shrink-0">
               <Image
-                src="/images/exter-d-logo_cropped.png"
+                src="/images/EXTER_D_logotyp_cropped.png"
                 alt="EXTER/D - externí technický grafik pro tisk a výrobu"
                 width={480}
                 height={256}
