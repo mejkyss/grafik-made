@@ -22,23 +22,26 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="relative">
-          {/* Content - Left Side */}
+          {/* Content */}
           <FadeIn>
-            <div className="max-w-4xl">
-              {/* Headline with Logo */}
-              <div className="flex items-center gap-4 sm:gap-6">
-                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl flex-1">
-                  Od návrhu až po funkční výstup – bez chyb, bez zdržení
-                </h1>
+            <div className="max-w-7xl">
+              {/* Headline with Logo - Two Equal Columns */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {/* Title Column */}
+                <div>
+                  <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl">
+                    Od návrhu až po funkční výstup – bez chyb, bez zdržení
+                  </h1>
+                </div>
                 
-                {/* Logo - Aligned with Title */}
-                <div className="hidden lg:flex items-center flex-shrink-0">
+                {/* Logo Column */}
+                <div className="hidden lg:flex items-center justify-center">
                   <Image
                     src="/images/EXTER_D_logotyp_cropped.png"
                     alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                    width={480}
-                    height={256}
-                    className="h-[4.5rem] w-auto object-contain"
+                    width={600}
+                    height={320}
+                    className="w-full h-auto object-contain max-h-[12rem]"
                     priority
                   />
                 </div>
