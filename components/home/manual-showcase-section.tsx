@@ -21,7 +21,7 @@ export function ManualShowcaseSection() {
                 </h2>
 
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Podívejte se na ukázku tvorby manuálů a grafických realizací. Video zachycuje zrychlený proces od vstupních podkladů až po finální tisková data.
+                  Video ukázky grafického manuálu, který byl vytvořen na zakázku pro dodržování grafických postupů v tiskárně.
                 </p>
 
                 <div className="space-y-3">
