@@ -62,15 +62,15 @@ export function ModernToolsSection() {
                 </Button>
               </div>
 
-              {/* Video */}
-              <div className="relative hidden lg:block rounded-2xl overflow-hidden bg-black">
-                <div className="aspect-[9/16] w-full max-w-md mx-auto">
-                  <iframe
-                    src="https://www.youtube.com/embed/SaX2LJizNfs"
-                    title="Modern tools demonstration"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
+              {/* AI Image */}
+              <div className="relative hidden lg:block rounded-2xl overflow-hidden">
+                <div className="aspect-[4/3] w-full">
+                  <Image
+                    src="/ai-workspace.jpg"
+                    alt="AI nástroje a moderní technologie"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
               </div>
