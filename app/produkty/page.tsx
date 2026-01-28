@@ -26,6 +26,36 @@ export default function ProductsPage() {
 
         <QuickPrintCatalog />
 
+        {/* Product Showcase Video */}
+        <section className="mt-16 sm:mt-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
+            Ukázka produktů
+          </h2>
+          <div className="bg-gradient-to-br from-primary/5 via-background to-primary/10 rounded-3xl border border-border overflow-hidden p-6 sm:p-8">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                  Podívejte se na ukázku našich tiskových produktů a jejich možností. Video prezentuje různé formáty, materiály a techniky tisku.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Od vizitek a letáků až po katalogy a personalizované produkty. Všechny výrobky jsou připraveny s důrazem na kvalitu a detail.
+                </p>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-black">
+                <div className="aspect-[9/16] w-full max-w-md mx-auto">
+                  <iframe
+                    src="https://www.youtube.com/embed/SaX2LJizNfs"
+                    title="Ukázka tiskových produktů"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="mt-12 p-6 bg-muted/50 rounded-2xl">
           <p className="text-sm text-muted-foreground text-center">
             Cena se odvíjí od rozsahu a podkladů. Konkrétní cenovou nabídku obdržíte po zaslání zadání.
