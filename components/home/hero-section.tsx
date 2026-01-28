@@ -21,14 +21,28 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="relative flex items-center gap-8">
+        <div className="relative">
           {/* Content - Left Side */}
           <FadeIn>
-            <div className="max-w-2xl flex-1">
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl">
-                Od návrhu až po funkční výstup – bez chyb, bez zdržení
-              </h1>
+            <div className="max-w-4xl">
+              {/* Headline with Logo */}
+              <div className="flex items-center gap-4 sm:gap-6">
+                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl flex-1">
+                  Od návrhu až po funkční výstup – bez chyb, bez zdržení
+                </h1>
+                
+                {/* Logo - Aligned with Title */}
+                <div className="hidden lg:flex items-center flex-shrink-0">
+                  <Image
+                    src="/images/EXTER_D_logotyp_cropped.png"
+                    alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                    width={480}
+                    height={256}
+                    className="h-[4.5rem] w-auto object-contain"
+                    priority
+                  />
+                </div>
+              </div>
 
               {/* Description */}
               <div className="mt-6 space-y-2 text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -41,13 +55,13 @@ export function HeroSection() {
               </div>
 
               {/* Mobile Logo */}
-              <div className="mt-8 lg:hidden">
+              <div className="mt-8 lg:hidden flex justify-center">
                 <Image
-                  src="/images/exter-d-logo.png"
+                  src="/images/EXTER_D_logotyp_cropped.png"
                   alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                  width={360}
-                  height={192}
-                  className="w-full max-w-sm h-auto"
+                  width={480}
+                  height={256}
+                  className="w-full max-w-xs h-auto object-contain"
                   priority
                 />
               </div>
@@ -73,20 +87,6 @@ export function HeroSection() {
                   </span>
                 ))}
               </div>
-            </div>
-          </FadeIn>
-
-          {/* Logo - Right Side */}
-          <FadeIn delay={0.1}>
-            <div className="hidden lg:flex items-center flex-shrink-0 h-[6rem]">
-              <Image
-                src="/images/EXTER_D_logotyp_cropped.png"
-                alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                width={480}
-                height={256}
-                className="h-full w-auto object-contain"
-                priority
-              />
             </div>
           </FadeIn>
         </div>
