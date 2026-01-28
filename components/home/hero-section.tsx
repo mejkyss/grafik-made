@@ -26,7 +26,7 @@ export function HeroSection() {
           <FadeIn>
             <div className="max-w-2xl flex-1">
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl" style={{ height: '256px' }}>
                 Od návrhu až po funkční výstup – bez chyb, bez zdržení
               </h1>
 
@@ -85,7 +85,7 @@ export function HeroSection() {
                 width={480}
                 height={256}
                 className="w-auto"
-                style={{ height: 'auto' }}
+                style={{ height: '256px' }}
                 priority
               />
             </div>

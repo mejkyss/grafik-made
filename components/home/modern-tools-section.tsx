@@ -63,8 +63,8 @@ export function ModernToolsSection() {
               </div>
 
               {/* AI Image */}
-              <div className="relative hidden lg:block rounded-2xl overflow-hidden">
-                <div className="aspect-[4/3] w-full">
+              <div className="relative hidden lg:flex items-center justify-center rounded-2xl overflow-hidden h-full">
+                <div className="relative w-full h-full min-h-[600px]">
                   <Image
                     src="/ai-workspace.jpg"
                     alt="AI nástroje a moderní technologie"
