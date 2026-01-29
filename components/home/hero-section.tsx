@@ -12,7 +12,7 @@ const trustChips = [
 export function HeroSection() {
   return (
     <section className="relative bg-background w-full">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-4 lg:py-8">
         <div className="mx-auto max-w-7xl">
           {/* Content */}
           <FadeIn>
@@ -30,13 +30,12 @@ export function HeroSection() {
               </div>
 
               {/* Main Headline */}
-              <h2 className="mt-12 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
-                Od návrhu až po funkční výstup
-                <br />– bez chyby, bez zdržení
+              <h2 className="mt-6 text-xl sm:text-2xl lg:text-2xl font-bold tracking-tight text-foreground leading-tight">
+                Od návrhu až po funkční výstup – bez chyby, bez zdržení
               </h2>
 
               {/* Description */}
-              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
                 <p>
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
