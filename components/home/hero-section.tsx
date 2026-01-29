@@ -36,11 +36,11 @@ export function HeroSection() {
               </h2>
 
               {/* Description */}
-              <div className="mt-6 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                <p className="text-balance">
+              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                <p className="whitespace-nowrap overflow-x-auto">
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
-                <p className="text-balance">
+                <p className="whitespace-nowrap overflow-x-auto">
                   Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
                 </p>
               </div>
