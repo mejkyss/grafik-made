@@ -11,12 +11,12 @@ const trustChips = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-background w-full">
+    <section className="relative bg-background w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl">
           {/* Content */}
           <FadeIn>
-            <div className="max-w-4xl">
+            <div className="w-full">
               {/* Large Logo/Brand Name */}
               <div className="mb-4">
                 <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-muted-foreground/60 leading-none">
@@ -36,7 +36,7 @@ export function HeroSection() {
               </h2>
 
               {/* Description */}
-              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
                 <p>
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
