@@ -37,10 +37,10 @@ export function HeroSection() {
 
               {/* Description */}
               <div className="mt-6 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                <p>
+                <p className="text-balance">
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
-                <p>
+                <p className="text-balance">
                   Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
                 </p>
               </div>
