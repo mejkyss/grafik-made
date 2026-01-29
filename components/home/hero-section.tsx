@@ -31,7 +31,8 @@ export function HeroSection() {
 
               {/* Main Headline */}
               <h2 className="mt-12 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
-                Od návrhu až po funkční výstup – bez chyby, bez zdržení
+                Od návrhu až po funkční výstup
+                <br />– bez chyby, bez zdržení
               </h2>
 
               {/* Description */}
