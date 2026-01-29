@@ -11,9 +11,9 @@ const trustChips = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="relative">
+    <section className="relative overflow-hidden bg-background w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl">
           {/* Content */}
           <FadeIn>
             <div className="max-w-4xl">
