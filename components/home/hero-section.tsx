@@ -1,54 +1,41 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion"
-import { Camera, Package, ShoppingBag, ArrowRight } from "lucide-react"
+import { FadeIn } from "@/components/motion"
 
 const trustChips = [
   "25+ let praxe",
   "tisk + výroba + montáž",
 ]
 
-const transformationSteps = [
-  { label: "Surový podklad", icon: Camera, description: "Vstupní materiál" },
-  { label: "Čistý produkt", icon: Package, description: "Zpracování" },
-  { label: "Prodejní prezentace", icon: ShoppingBag, description: "Finální výstup" },
-]
-
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="relative">
           {/* Content */}
           <FadeIn>
-            <div className="max-w-7xl">
-              {/* Headline with Logo - Two Equal Columns */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                {/* Title Column */}
-                <div>
-                  <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1] lg:text-5xl">
-                    Od návrhu až po funkční výstup – bez chyb, bez zdržení
-                  </h1>
-                </div>
-                
-                {/* Logo Column */}
-                <div className="hidden lg:flex items-center justify-center">
-                  <Image
-                    src="/images/EXTER_D_logotyp_cropped.png"
-                    alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                    width={600}
-                    height={320}
-                    className="w-full h-auto object-contain max-h-[12rem]"
-                    priority
-                  />
-                </div>
+            <div className="max-w-4xl">
+              {/* Large Logo/Brand Name */}
+              <div className="mb-4">
+                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-muted-foreground/60 leading-none">
+                  EXTER/D
+                </h1>
+                <p className="mt-2 text-base sm:text-lg text-muted-foreground">
+                  externí technický grafik
+                  <br />
+                  pro tisk a výrobu
+                </p>
               </div>
 
+              {/* Main Headline */}
+              <h2 className="mt-12 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
+                Od návrhu až po funkční výstup – bez chyby, bez zdržení
+              </h2>
+
               {/* Description */}
-              <div className="mt-6 space-y-2 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <div className="mt-6 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
                 <p>
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
@@ -57,24 +44,12 @@ export function HeroSection() {
                 </p>
               </div>
 
-              {/* Mobile Logo */}
-              <div className="mt-8 lg:hidden flex justify-center">
-                <Image
-                  src="/images/EXTER_D_logotyp_cropped.png"
-                  alt="EXTER/D - externí technický grafik pro tisk a výrobu"
-                  width={480}
-                  height={256}
-                  className="w-full max-w-xs h-auto object-contain"
-                  priority
-                />
-              </div>
-
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button variant="default" asChild size="lg" className="rounded-2xl">
+                <Button variant="default" asChild size="lg" className="rounded-full">
                   <Link href="/moje-prace">Moje práce</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-2xl bg-transparent">
+                <Button asChild variant="outline" size="lg" className="rounded-full bg-transparent">
                   <Link href="/produkty">Rychlé tiskové produkty</Link>
                 </Button>
               </div>
@@ -84,7 +59,7 @@ export function HeroSection() {
                 {trustChips.map((chip) => (
                   <span
                     key={chip}
-                    className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium"
+                    className="inline-flex items-center px-3 py-1.5 rounded-md bg-transparent text-foreground text-sm font-medium border-0"
                   >
                     {chip}
                   </span>
