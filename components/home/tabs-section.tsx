@@ -134,6 +134,7 @@ export function TabsSection() {
             </motion.div>
           </AnimatePresence>
         </div>
+        </div>
       </div>
     </section>
   )
