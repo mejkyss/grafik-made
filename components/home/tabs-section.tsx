@@ -54,28 +54,21 @@ export function TabsSection() {
   const activeContent = tabs.find((tab) => tab.id === activeTab)
 
   return (
-    <section className="py-16 sm:py-24 bg-background">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="py-0 sm:py-8 bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap justify-start gap-2 sm:gap-3 mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-sm sm:text-base font-medium transition-all duration-300 ${
+                className={`relative px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
                   activeTab === tab.id
-                    ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "text-primary-foreground bg-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-primary rounded-2xl"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
                 <span className="relative z-10 flex items-center gap-2">
                   <tab.icon className="w-4 h-4" />
                   {tab.label}
@@ -85,7 +78,7 @@ export function TabsSection() {
           </div>
         </FadeIn>
 
-        <div className="mt-10 sm:mt-12">
+        <div className="mt-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -108,14 +101,14 @@ export function TabsSection() {
                   <p className="text-sm text-center text-muted-foreground mb-8">
                     Produktová fotografie → Zpracování → Finální prezentace
                   </p>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     {activeContent?.items.map((item, index) => (
                       <motion.div
                         key={item}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className="p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
+                        className="p-5 sm:p-6 bg-muted/30 rounded-xl"
                       >
                         <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
                       </motion.div>
@@ -123,23 +116,18 @@ export function TabsSection() {
                   </div>
                 </div>
               ) : (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  {activeContent?.items.map((item, index) => {
-                    const isHighlighted = index % 2 === 0
-                    return (
-                      <motion.div
-                        key={item}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className={`p-4 sm:p-5 bg-card rounded-2xl border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300 ${
-                          isHighlighted ? "bg-gradient-to-br from-primary/5 via-background to-primary/10" : ""
-                        }`}
-                      >
-                        <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
-                      </motion.div>
-                    )
-                  })}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                  {activeContent?.items.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="p-5 sm:p-6 bg-muted/30 rounded-xl"
+                    >
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
+                    </motion.div>
+                  ))}
                 </div>
               )}
             </motion.div>
