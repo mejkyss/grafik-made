@@ -54,8 +54,9 @@ export function TabsSection() {
   const activeContent = tabs.find((tab) => tab.id === activeTab)
 
   return (
-    <section className="py-0 sm:py-8 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-0 sm:py-8 bg-background w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
         <FadeIn>
           <div className="flex flex-wrap justify-start gap-2 sm:gap-3 mb-8">
             {tabs.map((tab) => (
