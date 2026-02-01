@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/motion"
 
@@ -19,14 +20,14 @@ export function HeroSection() {
             <div className="w-full">
               {/* Large Logo/Brand Name */}
               <div className="mb-4">
-                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-muted-foreground/60 leading-none">
-                  EXTER/D
-                </h1>
-                <p className="mt-2 text-base sm:text-lg text-muted-foreground">
-                  externí technický grafik
-                  <br />
-                  pro tisk a výrobu
-                </p>
+                <Image
+                  src="/images/logo.png"
+                  alt="EXTER/D - externí technický grafik pro tisk a výrobu"
+                  width={400}
+                  height={150}
+                  className="h-auto w-[280px] sm:w-[350px] lg:w-[400px]"
+                  priority
+                />
               </div>
 
               {/* Main Headline */}
@@ -44,18 +45,18 @@ export function HeroSection() {
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button variant="default" asChild size="lg" className="rounded-full">
+              {/* CTA Buttons - using negative margin on first button to align text with content */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 -ml-6">
+                <Button variant="default" asChild size="lg" className="rounded-full w-fit">
                   <Link href="/moje-prace">Moje práce</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full bg-transparent">
+                <Button asChild variant="outline" size="lg" className="rounded-full bg-transparent w-fit">
                   <Link href="/produkty">Rychlé tiskové produkty</Link>
                 </Button>
               </div>
 
-              {/* Trust Chips */}
-              <div className="mt-6 flex flex-wrap gap-2">
+              {/* Trust Chips - aligned with content, not with button container */}
+              <div className="mt-6 flex flex-wrap gap-2 -ml-3">
                 {trustChips.map((chip) => (
                   <span
                     key={chip}
