@@ -45,8 +45,8 @@ export function HeroSection() {
                 </p>
               </div>
 
-              {/* CTA Buttons - using negative margin on first button to align text with content */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 -ml-6">
+              {/* CTA Buttons */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button variant="default" asChild size="lg" className="rounded-full w-fit">
                   <Link href="/moje-prace">Moje práce</Link>
                 </Button>
@@ -55,12 +55,12 @@ export function HeroSection() {
                 </Button>
               </div>
 
-              {/* Trust Chips - aligned with content, not with button container */}
-              <div className="mt-6 flex flex-wrap gap-2 -ml-3">
+              {/* Trust Chips */}
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
                 {trustChips.map((chip) => (
                   <span
                     key={chip}
-                    className="inline-flex items-center px-3 py-1.5 rounded-md bg-transparent text-foreground text-sm font-medium border-0"
+                    className="inline-flex items-center text-foreground text-sm font-medium"
                   >
                     {chip}
                   </span>
