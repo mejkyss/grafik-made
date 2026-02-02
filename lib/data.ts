@@ -465,6 +465,17 @@ export const services = [
     ]
   },
   {
+    title: "AI generování produktových fotografií",
+    description: "Díky nejmodernějším nástrojům umělé inteligence vám mohu generovat produktové fotografie pro váš e-shop, bez nutnosti fotografa. Zahrnuje generaci produktových foto pro váš celý e-shop.",
+    deliverables: [
+      "Generování produktových fotografií pomocí AI",
+      "Různé pozadí a styly podle požadavků",
+      "Konzistentní vizuální styl napříč katalogem",
+      "Úpravy a optimalizace pro e-shop",
+      "Export pro web i tisk"
+    ]
+  },
+  {
     title: "Tvorba webu na míru",
     description: "Vytvořím vám moderní web, který vypadá skvěle a zároveň funguje. Firemní web, portfolio, landing page nebo jednoduchý katalog služeb.",
     deliverables: [
