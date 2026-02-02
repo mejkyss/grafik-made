@@ -4,7 +4,8 @@ import React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/motion"
-import { Send, CheckCircle2 } from "lucide-react"
+import { Send, CheckCircle2, AlertCircle } from "lucide-react"
+import { sendContactEmail } from "@/lib/actions/send-email"
 
 const projectTypes = [
   { value: "", label: "Vyberte typ zakázky" },
@@ -28,16 +29,30 @@ export function ContactForm() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // Send email using server action
+    const result = await sendContactEmail({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      projectType: formData.projectType,
+      deadline: formData.deadline,
+      message: formData.message,
+    })
 
     setIsSubmitting(false)
-    setIsSubmitted(true)
+
+    if (result.success) {
+      setIsSubmitted(true)
+    } else {
+      setError(result.error || 'Nastala chyba při odesílání zprávy. Zkuste to prosím znovu.')
+    }
   }
 
   const handleChange = (
@@ -184,6 +199,13 @@ export function ContactForm() {
               <span className="text-destructive">*</span>
             </label>
           </div>
+
+          {error && (
+            <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-2xl flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-destructive">{error}</p>
+            </div>
+          )}
 
           <Button
             type="submit"
