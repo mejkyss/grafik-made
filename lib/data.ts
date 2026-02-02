@@ -475,7 +475,7 @@ export const services = [
       "rychlost, responzivitu, moderní vzhled",
       "možnost doplnit články a sekci ke stažení"
     ],
-    price: "8 000 Kč",
+    price: "Od 8 000 Kč",
     note: "Úplná webová stránka s veškerými SEO optimalizacemi, funkcionalitou, indexací a optimalizací."
   }
 ]
