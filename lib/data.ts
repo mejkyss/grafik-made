@@ -466,13 +466,19 @@ export const services = [
   },
   {
     title: "AI generování produktových fotografií",
-    description: "Díky nejmodernějším nástrojům umělé inteligence vám mohu generovat produktové fotografie pro váš e-shop, bez nutnosti fotografa. Zahrnuje generaci produktových foto pro váš celý e-shop.",
+    description: "Díky nejmodernějším nástrojům umělé inteligence vám mohu generovat produktové fotografie pro váš e-shop, bez nutnosti fotografa. Zahrnuje generaci produktových foto pro váš celý e-shop. Služba je dostupná pro jakýkoliv obor podnikání - od módy, přes nábytek, elektroniku, kosmetiku až po potraviny nebo průmyslové produkty.",
     deliverables: [
       "Generování produktových fotografií pomocí AI",
       "Různé pozadí a styly podle požadavků",
       "Konzistentní vizuální styl napříč katalogem",
       "Úpravy a optimalizace pro e-shop",
-      "Export pro web i tisk"
+      "Export pro web i tisk",
+      "Vhodné pro jakýkoliv obor podnikání"
+    ],
+    images: [
+      "/images/ai-product-photo-1.png",
+      "/images/ai-product-photo-2.png",
+      "/images/ai-product-photo-3.png"
     ]
   },
   {

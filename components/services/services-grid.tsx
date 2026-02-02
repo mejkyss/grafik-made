@@ -4,17 +4,19 @@ import Link from "next/link"
 import { services } from "@/lib/data"
 import { Button } from "@/components/ui/button"
 import { FadeInStagger, FadeInStaggerItem } from "@/components/motion"
+import Image from "next/image"
 import {
   FileCheck,
   BookOpen,
   Wrench,
   AlertCircle,
   Camera,
+  Sparkles,
   Globe,
   ArrowRight,
 } from "lucide-react"
 
-const serviceIcons = [FileCheck, BookOpen, Wrench, AlertCircle, Camera, Globe]
+const serviceIcons = [FileCheck, BookOpen, Wrench, AlertCircle, Camera, Sparkles, Globe]
 
 export function ServicesGrid() {
   return (
@@ -22,7 +24,9 @@ export function ServicesGrid() {
       {services.map((service, index) => {
         const Icon = serviceIcons[index] || FileCheck
         const isWebService = service.title === "Tvorba webu na míru"
+        const isAIService = service.title === "AI generování produktových fotografií"
         const isHighlighted = index % 2 === 0
+        const serviceImages = (service as { images?: string[] }).images
         
         return (
           <FadeInStaggerItem key={service.title}>
@@ -59,6 +63,26 @@ export function ServicesGrid() {
                     </ul>
                   </div>
                   
+                  {isAIService && serviceImages && serviceImages.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-foreground mb-3">
+                        Ukázky AI generovaných fotografií:
+                      </h4>
+                      <div className="grid grid-cols-3 gap-3">
+                        {serviceImages.map((src, imgIndex) => (
+                          <div key={imgIndex} className="relative aspect-square rounded-xl overflow-hidden border border-border">
+                            <Image
+                              src={src}
+                              alt={`AI produktová fotografie ukázka ${imgIndex + 1}`}
+                              fill
+                              className="object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {isWebService && service.price && (
                     <>
                       <div className="mb-4">
