@@ -109,7 +109,7 @@ export function TabsSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className="p-5 sm:p-6 bg-muted/30 rounded-xl"
+                        className="p-5 sm:p-6 bg-muted/40 rounded-xl"
                       >
                         <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
                       </motion.div>
@@ -124,7 +124,7 @@ export function TabsSection() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="p-5 sm:p-6 bg-muted/30 rounded-xl"
+                      className="p-5 sm:p-6 bg-muted/40 rounded-xl"
                     >
                       <p className="text-sm sm:text-base text-foreground leading-relaxed">{item}</p>
                     </motion.div>
