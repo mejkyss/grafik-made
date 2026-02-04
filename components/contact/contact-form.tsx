@@ -33,11 +33,36 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          projectType: formData.projectType,
+          deadline: formData.deadline,
+          message: formData.message,
+        }),
+      })
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Nepodařilo se odeslat zprávu')
+      }
+
+      console.log('[v0] Form submitted successfully:', data)
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('[v0] Error submitting form:', error)
+      alert('Došlo k chybě při odesílání zprávy. Zkuste to prosím znovu.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
