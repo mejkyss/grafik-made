@@ -30,7 +30,8 @@ export async function POST(request: Request) {
 
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'poptavka@mail.grafik.made.cz',
+      from: 'onboarding@resend.dev',
+      replyTo: email,
       to: 'jirdokoupil@gmail.com',
       subject: `Nová poptávka od ${name}`,
       html: `
