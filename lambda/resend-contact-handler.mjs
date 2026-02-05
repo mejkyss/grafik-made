@@ -61,7 +61,7 @@ export const handler = async (event) => {
   }
 
   const apiKey = process.env.RESEND_API_KEY
-  const from = process.env.RESEND_FROM || "Grafik Made <no-reply@grafik.made.cz>"
+  const from = process.env.RESEND_FROM || "Grafik Made <no-reply@mail.grafik.made.cz>"
   const to = process.env.RESEND_TO || "jirdokoupil@gmail.com"
 
   if (!apiKey) {
