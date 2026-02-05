@@ -51,15 +51,19 @@ export function ContactForm() {
 
       const data = await response.json()
 
+      console.log('[v0] API Response:', { status: response.status, data })
+
       if (!response.ok) {
-        throw new Error(data.error || 'Nepodařilo se odeslat zprávu')
+        const errorMessage = data.details || data.error || 'Nepodařilo se odeslat zprávu'
+        throw new Error(errorMessage)
       }
 
       console.log('[v0] Form submitted successfully:', data)
       setIsSubmitted(true)
     } catch (error) {
       console.error('[v0] Error submitting form:', error)
-      alert('Došlo k chybě při odesílání zprávy. Zkuste to prosím znovu.')
+      const errorMessage = error instanceof Error ? error.message : 'Došlo k chybě při odesílání zprávy'
+      alert(`Chyba: ${errorMessage}\n\nZkuste to prosím znovu nebo nás kontaktujte přímo na jirdokoupil@gmail.com`)
     } finally {
       setIsSubmitting(false)
     }

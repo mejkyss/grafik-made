@@ -28,9 +28,17 @@ export async function POST(request: Request) {
 
     const projectTypeLabel = projectType ? projectTypeLabels[projectType] || projectType : 'Nespecifikováno'
 
+    console.log('[v0] Attempting to send email with config:', {
+      from: 'poptavka@mail.grafik.made.cz',
+      replyTo: email,
+      to: 'jirdokoupil@gmail.com',
+      hasApiKey: !!process.env.RESEND_API_KEY,
+      apiKeyLength: process.env.RESEND_API_KEY?.length || 0
+    })
+
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'Grafik Made <poptavka@mail.grafik.made.cz>',
       replyTo: email,
       to: 'jirdokoupil@gmail.com',
       subject: `Nová poptávka od ${name}`,
@@ -166,19 +174,30 @@ Tato zpráva byla odeslána z kontaktního formuláře na grafik.made.cz
     })
 
     if (error) {
-      console.error('[v0] Resend error:', error)
+      console.error('[v0] Resend error details:', {
+        message: error.message,
+        name: error.name,
+        fullError: JSON.stringify(error, null, 2)
+      })
       return NextResponse.json(
-        { error: 'Nepodařilo se odeslat e-mail' },
+        { error: 'Nepodařilo se odeslat e-mail', details: error.message },
         { status: 500 }
       )
     }
 
     console.log('[v0] Email sent successfully:', data)
-    return NextResponse.json({ success: true, id: data?.id })
+    return NextResponse.json({ success: true, data })
   } catch (error) {
-    console.error('[v0] Error sending email:', error)
+    console.error('[v0] Error sending email:', {
+      error,
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined
+    })
     return NextResponse.json(
-      { error: 'Došlo k chybě při odesílání e-mailu' },
+      { 
+        error: 'Došlo k chybě při odesílání e-mailu',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     )
   }
