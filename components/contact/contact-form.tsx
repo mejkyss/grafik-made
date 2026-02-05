@@ -29,12 +29,16 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+const LAMBDA_CONTACT_URL =
+  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ??
+  "https://bxtobgdzhmcd2rinhsiorllpv40bcjce.lambda-url.eu-north-1.on.aws/"
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch(LAMBDA_CONTACT_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,21 +53,24 @@ export function ContactForm() {
         }),
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => ({}))
 
-      console.log('[v0] API Response:', { status: response.status, data })
+      console.log('API Response:', { status: response.status, data })
 
       if (!response.ok) {
         const errorMessage = data.details || data.error || 'Nepodařilo se odeslat zprávu'
         throw new Error(errorMessage)
       }
 
-      console.log('[v0] Form submitted successfully:', data)
+      console.log('Form submitted successfully:', data)
       setIsSubmitted(true)
     } catch (error) {
-      console.error('[v0] Error submitting form:', error)
-      const errorMessage = error instanceof Error ? error.message : 'Došlo k chybě při odesílání zprávy'
-      alert(`Chyba: ${errorMessage}\n\nZkuste to prosím znovu nebo nás kontaktujte přímo na jirdokoupil@gmail.com`)
+      console.error('Error submitting form:', error)
+      const errorMessage =
+        error instanceof Error ? error.message : 'Došlo k chybě při odesílání zprávy'
+      alert(
+        `Chyba: ${errorMessage}\n\nZkuste to prosím znovu nebo nás kontaktujte přímo na jirdokoupil@gmail.com`
+      )
     } finally {
       setIsSubmitting(false)
     }
