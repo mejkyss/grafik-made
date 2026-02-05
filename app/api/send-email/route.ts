@@ -185,12 +185,8 @@ Tato zpráva byla odeslána z kontaktního formuláře na grafik.made.cz
       )
     }
 
-    console.log('[v0] Email sent successfully:', {
-      id: data?.id,
-      from: data?.from,
-      to: data?.to
-    })
-    return NextResponse.json({ success: true, id: data?.id })
+    console.log('[v0] Email sent successfully:', data)
+    return NextResponse.json({ success: true, data })
   } catch (error) {
     console.error('[v0] Error sending email:', {
       error,
