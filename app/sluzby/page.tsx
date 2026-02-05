@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Služby
@@ -30,7 +30,7 @@ export default function ServicesPage() {
 
       <CollaborationStepsSection />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <section className="mt-16 sm:mt-20">
           <div className="bg-card rounded-3xl border border-border p-8 sm:p-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
