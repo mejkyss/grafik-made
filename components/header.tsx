@@ -29,7 +29,7 @@ export function Header() {
           <div className="flex h-16 items-center justify-between">
           <Link 
             href="/" 
-            className="flex items-center hover:opacity-80 transition-opacity -ml-1"
+            className="flex self-stretch items-center hover:opacity-80 transition-opacity -ml-1"
           >
             <Image
               src="/images/exter-d-logotyp.png"
