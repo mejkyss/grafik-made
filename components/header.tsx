@@ -36,7 +36,7 @@ export function Header() {
               alt="EXTER/D - externí technický grafik pro tisk a výrobu"
               width={160}
               height={60}
-              className="h-10 w-auto"
+              className="h-10 w-auto lg:translate-y-0.5"
               priority
             />
           </Link>
