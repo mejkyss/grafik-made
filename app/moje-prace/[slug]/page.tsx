@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <div className="py-12 sm:py-16 lg:py-20">
+    <div className="pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-20">
       <PageShell>
         <Button asChild variant="ghost" className="mb-8 -ml-2">
           <Link href="/moje-prace">

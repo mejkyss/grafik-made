@@ -85,7 +85,7 @@ const downloadCategories = [
 
 export default function DownloadsPage() {
   return (
-    <div className="py-12 sm:py-16 lg:py-20">
+    <div className="pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-20">
       <PageShell>
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
