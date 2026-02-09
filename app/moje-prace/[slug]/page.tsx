@@ -5,6 +5,7 @@ import { projects } from "@/lib/data"
 import { Button } from "@/components/ui/button"
 import { ProjectDetail } from "@/components/portfolio/project-detail"
 import { ArrowLeft } from "lucide-react"
+import { PageShell } from "@/components/layout/page-shell"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -42,7 +43,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <Button asChild variant="ghost" className="mb-8 -ml-2">
           <Link href="/moje-prace">
             <ArrowLeft className="mr-2 w-4 h-4" />
@@ -51,7 +52,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </Button>
 
         <ProjectDetail project={project} />
-      </div>
+      </PageShell>
     </div>
   )
 }

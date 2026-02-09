@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { products } from "@/lib/data"
 import { ProductsGrid } from "@/components/products/products-grid"
 import { QuickPrintCatalog } from "@/components/products/quick-print-catalog"
+import { PageShell } from "@/components/layout/page-shell"
 
 export const metadata: Metadata = {
   title: "Rychlé tiskové produkty",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Rychlé tiskové produkty
@@ -31,7 +32,7 @@ export default function ProductsPage() {
             Cena se odvíjí od rozsahu a podkladů. Konkrétní cenovou nabídku obdržíte po zaslání zadání.
           </p>
         </div>
-      </div>
+      </PageShell>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { AboutContent } from "@/components/about/about-content"
 import { ArrowRight } from "lucide-react"
+import { PageShell } from "@/components/layout/page-shell"
 
 export const metadata: Metadata = {
   title: "O mně",
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <AboutContent />
-      </div>
+      </PageShell>
     </div>
   )
 }

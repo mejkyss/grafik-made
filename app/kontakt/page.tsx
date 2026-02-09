@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import { ContactForm } from "@/components/contact/contact-form"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { PageShell } from "@/components/layout/page-shell"
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Kontakt
@@ -81,7 +82,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </div>
+      </PageShell>
     </div>
   )
 }

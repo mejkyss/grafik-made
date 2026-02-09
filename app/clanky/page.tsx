@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next"
 import { ExpandableArticle } from "@/components/article/expandable-article"
+import { PageShell } from "@/components/layout/page-shell"
 
 // Note: Metadata is not available in client components, but this page is now client-side for interactivity
 const articles = [
@@ -104,7 +105,7 @@ const articles = [
 export default function ArticlesPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Články
@@ -137,7 +138,7 @@ export default function ArticlesPage() {
             </a>
           </p>
         </div>
-      </div>
+      </PageShell>
     </div>
   )
 }

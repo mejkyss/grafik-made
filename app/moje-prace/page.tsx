@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { PortfolioGrid } from "@/components/portfolio/portfolio-grid"
+import { PageShell } from "@/components/layout/page-shell"
 
 export const metadata: Metadata = {
   title: "Moje práce",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <div className="mb-10 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Moje práce
@@ -21,7 +22,7 @@ export default function PortfolioPage() {
         </div>
 
         <PortfolioGrid />
-      </div>
+      </PageShell>
     </div>
   )
 }

@@ -13,13 +13,13 @@ const trustChips = [
 export function HeroSection() {
   return (
     <section className="relative bg-background w-full">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-4 lg:py-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6">
         <div className="mx-auto max-w-7xl">
           {/* Content */}
           <FadeIn>
             <div className="w-full">
               {/* Large Logo/Brand Name */}
-              <div className="mb-4">
+              <div className="mb-3">
                 <Image
                   src="/images/logo.png"
                   alt="EXTER/D - externí technický grafik pro tisk a výrobu"
@@ -31,12 +31,12 @@ export function HeroSection() {
               </div>
 
               {/* Main Headline */}
-              <h2 className="mt-6 text-xl sm:text-2xl lg:text-2xl font-bold tracking-tight text-foreground leading-tight">
+              <h2 className="mt-8 text-xl sm:text-2xl lg:text-2xl font-bold tracking-tight text-foreground leading-tight">
                 Od návrhu až po funkční výstup – bez chyby, bez zdržení
               </h2>
 
               {/* Description */}
-              <div className="mt-6 space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <div className="mt-4 space-y-0.5 text-base sm:text-lg text-muted-foreground leading-snug">
                 <p>
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
@@ -46,7 +46,7 @@ export function HeroSection() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Button variant="default" asChild size="lg" className="rounded-full w-fit">
                   <Link href="/moje-prace">Moje práce</Link>
                 </Button>
@@ -56,7 +56,7 @@ export function HeroSection() {
               </div>
 
               {/* Trust Chips */}
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                 {trustChips.map((chip) => (
                   <span
                     key={chip}

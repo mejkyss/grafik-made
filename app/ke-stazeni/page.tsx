@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Download, FileText, CheckSquare, FileCheck } from "lucide-react"
+import { PageShell } from "@/components/layout/page-shell"
 
 export const metadata: Metadata = {
   title: "Ke stažení",
@@ -85,7 +86,7 @@ const downloadCategories = [
 export default function DownloadsPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <PageShell>
         <div className="mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Ke stažení
@@ -154,7 +155,7 @@ export default function DownloadsPage() {
             </a>
           </p>
         </div>
-      </div>
+      </PageShell>
     </div>
   )
 }
