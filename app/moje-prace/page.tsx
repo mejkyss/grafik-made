@@ -17,7 +17,13 @@ export default function PortfolioPage() {
             Moje práce
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Výběr z realizovaných projektů z oblasti tisku, výroby a produktové prezentace.
+            Ukázky práce
+          </p>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Výběr z realizovaných projektů z posledních 25 let.
+          </p>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Všechny návrhy byly vytvořeny bez použití AI.
           </p>
         </div>
 
