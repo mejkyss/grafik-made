@@ -10,11 +10,10 @@ import { Button } from "@/components/ui/button"
 
 const navItems = [
   { href: "/moje-prace", label: "Moje práce" },
-  { href: "/sluzby", label: "Služby" },
   { href: "/produkty", label: "Rychlé tiskové produkty" },
   { href: "/ke-stazeni", label: "Ke stažení" },
   { href: "/clanky", label: "Články" },
-  { href: "/o-mne", label: "O mně" },
+  { href: "/o-mne", label: "Our Team" },
   { href: "/kontakt", label: "Kontakt" },
 ]
 
