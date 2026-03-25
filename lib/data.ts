@@ -343,6 +343,21 @@ export const products: Product[] = [
     badges: ["Rychle", "Tisková data"]
   },
   {
+    id: "3d-samolepky-s-pryskyrici",
+    title: "20 ks 3D samolepek s pryskyřicí",
+    price: "55 Kč/ks",
+    description: "Efektní 3D samolepky s pryskyřicí v malé sérii 20 kusů. Jedinečná nabídka na trhu.",
+    features: [
+      "Malá série už od 20 kusů",
+      "3D povrch s pryskyřičným efektem",
+      "Vhodné pro značení produktů i firemní prezentaci"
+    ],
+    turnaround: "dle domluvy",
+    subject: "Poptávka: 20 ks 3D samolepek s pryskyřicí",
+    badges: ["Novinka"],
+    note: "Jedinečná nabídka na trhu!"
+  },
+  {
     id: "vizitky",
     title: "Vizitky",
     price: "od 900 Kč",
@@ -600,6 +615,12 @@ export const quickPrintCatalog = [
     src: "/Rychle-tiskoviny/VZORY_STITKY_2.jpg",
     type: "image",
     pdf: "/Rychle-tiskoviny/VZORY_STITKY.pdf"
+  },
+  {
+    id: "3d-samolepky",
+    title: "20 ks 3D samolepek s pryskyřicí",
+    src: "/Realizace_2000-2026/3D samolepky.jpg",
+    type: "image"
   },
   {
     id: "poukazy",
