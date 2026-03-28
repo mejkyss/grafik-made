@@ -5,6 +5,7 @@ import { TargetAudienceSection } from "@/components/home/target-audience-section
 import { CollaborationSection } from "@/components/home/collaboration-section"
 import { ModernToolsSection } from "@/components/home/modern-tools-section"
 import { ManualShowcaseSection } from "@/components/home/manual-showcase-section"
+import { YoutubeShortsSection } from "@/components/home/youtube-shorts-section"
 import { CollaborationStepsSection } from "@/components/home/collaboration-steps-section"
 import { PortfolioTeaserSection } from "@/components/home/portfolio-teaser-section"
 import { ContactCtaSection } from "@/components/home/contact-cta-section"
@@ -31,6 +32,7 @@ export default function HomePage() {
       <TargetAudienceSection />
       <ModernToolsSection />
       <ManualShowcaseSection />
+      <YoutubeShortsSection />
       <CollaborationStepsSection />
       <CollaborationSection />
       <PortfolioTeaserSection />
