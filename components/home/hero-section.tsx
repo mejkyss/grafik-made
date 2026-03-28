@@ -12,31 +12,27 @@ const trustChips = [
 
 export function HeroSection() {
   return (
-    <section className="relative bg-background w-full">
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-3 sm:pb-4 lg:pb-6">
+    <section className="relative w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-4 sm:pb-5 lg:pb-7">
         <div className="mx-auto max-w-7xl">
-          {/* Content */}
           <FadeIn>
-            <div className="w-full">
-              {/* Large Logo/Brand Name */}
+            <div className="w-full max-w-3xl">
               <div className="mb-3">
                 <Image
                   src="/images/logo.png"
                   alt="EXTER/D - externí technický grafik pro tisk a výrobu"
                   width={400}
                   height={150}
-                  className="h-auto w-[280px] sm:w-[350px] lg:w-[400px]"
+                  className="h-auto w-[280px] sm:w-[350px] lg:w-[410px]"
                   priority
                 />
               </div>
 
-              {/* Main Headline */}
-              <h2 className="mt-8 text-xl sm:text-2xl lg:text-2xl font-bold tracking-tight text-foreground leading-tight">
+              <h2 className="mt-8 text-xl sm:text-2xl lg:text-[2rem] font-bold tracking-tight text-foreground leading-tight">
                 Od návrhu až po funkční výstup – bez chyby, bez zdržení
               </h2>
 
-              {/* Description */}
-              <div className="mt-4 space-y-0.5 text-base sm:text-lg text-muted-foreground leading-snug">
+              <div className="mt-4 max-w-2xl space-y-1 text-base sm:text-lg text-muted-foreground leading-snug">
                 <p>
                   Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a bezchybných výstupů.
                 </p>
@@ -45,7 +41,6 @@ export function HeroSection() {
                 </p>
               </div>
 
-              {/* CTA Buttons */}
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Button variant="default" asChild size="lg" className="rounded-full w-fit">
                   <Link href="/moje-prace">Moje práce</Link>
@@ -55,7 +50,6 @@ export function HeroSection() {
                 </Button>
               </div>
 
-              {/* Trust Chips */}
               <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                 {trustChips.map((chip) => (
                   <span
