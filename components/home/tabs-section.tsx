@@ -87,7 +87,7 @@ export function TabsSection() {
           className="absolute inset-0 left-1/2 w-screen -translate-x-1/2 bg-background"
         />
         <div className="relative w-full px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
-          <div className="w-full">
+          <div className="mx-auto w-full max-w-7xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
