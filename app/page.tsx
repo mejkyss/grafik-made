@@ -21,7 +21,7 @@ export default function HomePage() {
           width={2560}
           height={931}
           priority
-          className="pointer-events-none absolute inset-x-0 top-0 z-0 h-auto w-full -translate-y-[7.2%]"
+          className="pointer-events-none absolute inset-x-0 top-0 z-0 h-auto w-full -translate-y-[7%]"
         />
 
         <div className="relative z-10">
