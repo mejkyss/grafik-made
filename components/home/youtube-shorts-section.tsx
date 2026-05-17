@@ -5,7 +5,7 @@ import { PlaySquare } from "lucide-react"
 
 const shortVideos = [
   {
-    id: "jXnHKdDM15E",
+    id: "oX6SiMLS4pk",
     title: "Video short: realizace a výstupy",
   },
 ]

@@ -16,14 +16,12 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden">
         <Image
           aria-hidden="true"
-          src="/hero-background-27-03.png"
-          alt=""
-          width={2560}
-          height={931}
-          priority
-          className="pointer-events-none absolute inset-x-0 top-0 z-0 h-auto w-full -translate-y-[7%]"
-        />
-
+        src="/images/POZADI.png"
+        alt=""
+        width={2560}
+        height={931}
+        priority
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
         <div className="relative z-10">
           <HeroSection />
           <TabsSection />
