@@ -8,6 +8,10 @@ const shortVideos = [
     id: "oX6SiMLS4pk",
     title: "Video short: realizace a výstupy",
   },
+  {
+    id: "jXnHKdDM15E",
+    title: "Video short: realizace a výstupy",
+  },
 ]
 
 export function YoutubeShortsSection() {

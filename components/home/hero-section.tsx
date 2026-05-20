@@ -29,16 +29,16 @@ export function HeroSection() {
               </div>
 
               <h2 className="mt-8 text-xl sm:text-2xl lg:text-[2rem] font-bold tracking-tight text-foreground leading-tight">
-                Od návrhu až po funkční výstup – bez chyby, bez
+                Od návrhu až po funkční výstup – bez chyby,
                 <br />
-                zdržení
+                bez zdržení
               </h2>
 
               <div className="mt-4 max-w-2xl space-y-1 text-base sm:text-lg text-muted-foreground leading-snug">
                 <p>
-                  Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných a
+                  Pomáhám firmám převádět grafické návrhy do funkčních, vyrobitelných
                   <br />
-                  bezchybných výstupů.
+                  a bezchybných výstupů.
                 </p>
                 <p>
                   Pracuji tam, kde se potkává design, tisk, výroba a realita – a kde často vznikají chyby, zdržení a zbytečné náklady.
