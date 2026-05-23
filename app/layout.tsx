@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { TypographyGuard } from "@/components/typography-guard"
 import "./globals.css"
 
 const inter = Inter({
@@ -63,6 +64,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ScrollToTop />
+        <TypographyGuard />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
