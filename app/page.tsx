@@ -21,7 +21,7 @@ export default function HomePage() {
           width={2560}
           height={931}
           priority
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+          className="pointer-events-none absolute left-1/2 top-0 z-0 h-full w-screen max-w-none -translate-x-1/2 object-cover"
         />
         <div className="relative z-10">
           <HeroSection />
