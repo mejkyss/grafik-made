@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden bg-background">
         <Image
           aria-hidden="true"
-          src="/images/POZADI.png"
+          src="/images/POZADI.png?v=20260523"
           alt=""
           width={2560}
           height={931}
