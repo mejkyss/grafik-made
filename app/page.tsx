@@ -13,7 +13,7 @@ import { ContactCtaSection } from "@/components/home/contact-cta-section"
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-background">
         <Image
           aria-hidden="true"
           src="/images/POZADI.png"
@@ -21,7 +21,8 @@ export default function HomePage() {
           width={2560}
           height={931}
           priority
-          className="pointer-events-none absolute left-1/2 top-0 z-0 h-full w-screen max-w-none -translate-x-1/2 object-cover"
+          sizes="100vw"
+          className="pointer-events-none absolute left-1/2 top-0 z-0 h-auto w-screen max-w-none -translate-x-1/2"
         />
         <div className="relative z-10">
           <HeroSection />
